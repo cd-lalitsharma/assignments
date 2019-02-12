@@ -1,7 +1,7 @@
 span {
     display: inline-block;
     padding: 20px;
-    font-size: 15;
+    font-size: 15; 
     color : rgb(83, 165, 104);
 }
 input[type=submit]{

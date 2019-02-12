@@ -1,0 +1,66 @@
+<!-- Question 2. is palindrome string -->
+    <html>
+            <head>
+                <title>Question 2</title>
+                <style>
+                    #calc{
+                        margin-top: 30px;
+                        margin-left: 38%;
+                    }
+                    #enterText{
+                        margin-top:10px;
+                        margin-left:39%;
+                    }
+                    #button{
+                        margin-top:10px;
+                        margin-left:45%;
+                    }
+                    input[type=text]{
+                        height: 30px;
+                    }
+                    #question{
+                    margin-top: 20px;
+                    align-content: center;
+                    margin-left: 30%;
+                }
+                </style>
+            </head>
+            <body>
+                    <div id="question">
+                    <h1>Question 2. check if string is palindrome</h1>    
+                    </div>
+                <div id="calc">
+                        <h1>Palindrome Checker</h1>
+                </div>
+                <div id="enterText">
+                        <label for="textType">Enter Text:</label>
+                        <input type="text" id="textType" name="textbox">
+                </div>
+                <div id="button">
+                        <button onclick="chk()" type="button">Check Now</button>        
+                </div>
+                       
+                
+        
+                <script>
+                    function chk(){
+                        
+                        
+                       let name= document.getElementsByName('textbox')[0].value;  
+                       if(name==""){
+                            alert("Enter String to check");
+                       } else{
+                            let revString =name.split("").reverse("").join("");
+                            if(name==revString){
+                                alert(name+" is palindrome");
+                            }else{
+                                alert(name+" is not palindrome");
+                            }
+                       }
+                       
+                       
+                    }
+                </script>
+            </body>
+                
+        </html>

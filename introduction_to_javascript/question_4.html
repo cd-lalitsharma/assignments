@@ -1,0 +1,79 @@
+<!-- Question 4.Copy information of one object to another and log it to console.-->
+<html>
+        <head>
+            <title>Question 4</title>
+            <style>
+                #heading{
+                    margin-top: 30px;
+                    margin-left: 38%;
+                }
+                #enterText{
+                    margin-top:10px;
+                    margin-left:40%;
+                }
+                #button{
+                    margin-top:10px;
+                    margin-left:43%;
+                }
+                input[type=text]{
+                    height: 30px;
+                }
+                button[type=button]{
+                    height: 30px;
+                }
+                #question{
+                    margin-top: 50px;
+                    align-content: center;
+                    margin-left: 15%;
+                }
+            </style>
+        </head>
+        <body>
+            <div id="question">
+                <h1>Question 4.Copy information of one object to another and log it to console</h1>
+            </div>
+            <div id="heading">
+                    <h2>Enter a key for Game object</h2>
+            </div>
+            <div id="enterText">
+                    <label for="textType">Game:</label>
+                    <input type="text" id="textType" name="textbox">
+            </div>
+            <div id="button">
+                    <button onclick="chk()" type="button">Copy Object & log in console</button>        
+            </div>
+                   
+            
+    
+            <script>
+                function chk(){
+                    
+                   let KeyName= document.getElementsByName('textbox')[0].value;   
+                   
+                   if(KeyName==""){
+                        alert("Enter key value first");
+                   } else{
+                    console.log("Entered key value is "+KeyName);
+                       let Game={
+                           game:KeyName
+                       };
+                       console.log("%c--creating new object--","color: blue; font-size:15px;");
+                       console.log("%c--copying old object to  new object--","color: blue; font-size:15px;");
+                       
+                       let newGame=Game;
+                       
+                       console.log("%cold object ","color: blue; font-size:15px;");
+                       console.log(Game);
+
+                       console.log("%cnew copied object ","color: green; font-size:15px;");
+                       console.log(newGame);
+
+                       document.getElementById('textType').value="";
+                       
+                   
+                   }
+                }
+            </script>
+        </body>
+            
+    </html>

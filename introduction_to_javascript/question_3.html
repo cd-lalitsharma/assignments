@@ -1,0 +1,72 @@
+<!-- Question 3.Area of circle-->
+    <html>
+            <head>
+                <title>Question 3</title>
+                <style>
+                    #heading{
+                        margin-top: 30px;
+                        margin-left: 42%;
+                    }
+                    #enterText{
+                        margin-top:10px;
+                        margin-left:37%;
+                    }
+                    #button{
+                        margin-top:10px;
+                        margin-left:45%;
+                    }
+                    input[type=text]{
+                        height: 30px;
+                    }
+                    #question{
+                    margin-top: 20px;
+                    align-content: center;
+                    margin-left: 35%;
+                }
+                </style>
+            </head>
+            <body>
+                <div id="question">
+                    <h1>Question 3.Area of circle</h1>
+                </div>
+                
+                <div id="heading">
+                        <h1>Area of Circle</h1>
+                </div>
+                <div id="enterText">
+                        <label for="textType">Enter Radius:</label>
+                        <input type="text" id="textType" name="textbox">
+                </div>
+                <div id="button">
+                        <button onclick="chk()" type="button">Calculate Now</button>        
+                </div>
+                       
+                
+        
+                <script>
+                    function chk(){
+                        
+                       let side= document.getElementsByName('textbox')[0].value;   
+                       console.log(side);
+                       if(side==""){
+                            alert("Enter Radius to check");
+                       } else{
+                        
+                        radius=parseInt(side);
+                        if(isNaN(radius)){
+                            alert("please enter only digits");
+                            delete(side);
+                            delete(radius); 
+                            document.getElementById('textType').value="";
+                        }else{
+                        area = 3.14*radius*radius;
+                        area=area.toFixed(2);
+                        alert("The area of circle is "+area);
+                        }
+                       
+                       }
+                    }
+                </script>
+            </body>
+                
+        </html>
