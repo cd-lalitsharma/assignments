@@ -119,8 +119,18 @@ Name, age, salary ,DOB
 
                 function answer3(){ 
                     console.clear();
+                    let emp =[{name:"a",salary:1000,age:20},
+                              {name:"b",salary:1200,age:21},
+                              {name:"c",salary:5200,age:22},
+                              {name:"d",salary:6400,age:23},
+                              {name:"e",salary:1500,age:24},
+                              {name:"v",salary:500,age:25},
+                              {name:"x",salary:600,age:17},
+                              {name:"y",salary:700,age:18},
+                              {name:"z",salary:800,age:19}]
+
                     console.log("%c3.fetch employees with salary less than 1000 and age greater than 20. Then give them an increment 5 times their salary.","color: blue; font-size:15px;");
-                    console.log("%cpeople below age 20 having salary 1000","color: green; font-size:15px;");
+                    console.log("%cpeople below age 20 having salary less than 1000","color: green; font-size:15px;");
                     var count=1;
                     for(let i=0;i<emp.length;i++){
                         if(emp[i].salary<1000 && emp[i].age<20 ){
