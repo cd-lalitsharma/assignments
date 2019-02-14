@@ -59,25 +59,18 @@
                 <button onclick="chng()">change cell color</button>
         </div>
 
-
-
-
-
-
             <script
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
             <script>
                 function chng(){
-                    var ln = $("#ek tr").length;
-                    for(var i=0;i<ln;i++){
-                        var itm ="#r"+i;
-                        var vl = parseInt($(itm).text());
-                        if( vl>10){
-                            $(itm).css("background-color","green");
+                    $("#ek td").each(function(){
+                        var v = parseInt($(this).text());
+                        if(v>10){
+                            $(this).css("background-color","green");
                         }
-                    }
+                    });
                 }
  
             </script>
