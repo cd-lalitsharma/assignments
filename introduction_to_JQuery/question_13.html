@@ -36,7 +36,7 @@
             <div id="heading">
                 <h3>click on any div to get its height</h3>
             </div>
-        <div id="main" onclick="div1()">
+        <div id="main">
             <h3>div 1</h3>
                 <ul>
                     <li>number 1</li>
@@ -48,7 +48,7 @@
 
         </div>
         <hr>
-        <div id="div2" onclick="div2()">
+        <div id="div2">
             <h2>Div 2</h2>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus nulla reprehenderit adipisci a sapiente repellat error assumenda impedit dolor, ab dolorem in aliquam velit quibusdam veniam ratione facilis labore natus!
             Molestias adipisci voluptatem, nostrum perferendis harum quidem est illum fugiat quam necessitatibus quia repellat accusantium, rerum porro similique dolor! Cumque corrupti voluptates architecto quis ipsa inventore molestiae corporis repudiandae. Saepe!
@@ -72,12 +72,11 @@
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
             <script>
-                function div1(){
-                    alert("heigth of div 1 is "+$("#main").height()+" px");
-                }
-                function div2(){
-                    alert("heigth of div 2 is "+$("#div2").height()+" px");
-                }
+                $(document).ready(function(){
+                    $("div").each(function(i){
+                        alert("element " +(i+1) + " has height " +$(this).height() +" px" );
+                    });
+                });
             </script>
     </body>
 </html>

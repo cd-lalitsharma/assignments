@@ -31,6 +31,7 @@
      
 
         <div id="main">
+            <h3>click working on parent div</h3>
                 <ul>
                     <li>number 1</li>
                     <li>number 2</li>
@@ -39,9 +40,8 @@
                     <li>number 5</li>
                 </ul>
 
-                <button onclick="unbindFunc()">Unbind click event</button>
+                <button id="btn">Click working</button>
         </div>
-
 
 
 
@@ -53,19 +53,17 @@
             crossorigin="anonymous"></script>
             <script>
                 $(document).ready(function(){
-                    $("#notworking").click(function(){
-                        event.preventDefault();
-                    });
+                    
                     $("#main li").click(function(){
-                        alert("clicked");
+                        $("#main").unbind("click");
+                        $("#main button").html("click not working on parent div");
+                    });
+                    $("#main").click(()=>{
+                       alert("click working on parent div");
+                       
                     });
 
                 });
-
-                function unbindFunc(){
-                    $("#main li").unbind("click");
-
-                }
             </script>
     </body>
 </html>

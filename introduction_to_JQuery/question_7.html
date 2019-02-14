@@ -32,7 +32,7 @@
      
 
         <div id="main">
-            <button onclick="clk()">Click Function</button>
+            <button id="btn" >Click Function</button>
         </div>
         <div id="dymnc">
 
@@ -50,8 +50,13 @@
             crossorigin="anonymous"></script>
             <script>
                 function clk(){
-                    $("#dymnc").html("<p> click added</p>");
+                    
                 }
+                $(document).ready(()=>{
+                    $("#btn").click(()=>{
+                        $("#dymnc").html("<p> click added</p>");
+                    });
+                });
             </script>
     </body>
 </html>
