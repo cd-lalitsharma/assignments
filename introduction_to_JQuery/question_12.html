@@ -1,0 +1,71 @@
+<!-- Question 12. We have bind a click funtion to parent div but we want stop it from performing when user clicks on its child li-->
+
+<html>
+    <head>
+
+        <title>Question 12</title>
+        <style>
+            h1{
+                margin-left: 10%;
+                margin-top:15%;
+            }
+            #main{
+                margin-top: 20px;
+                margin-left:45%;
+            }
+            #dymnc{
+                margin-top: 20px;
+                margin-left:44%;
+            }
+            button{
+                margin-top:20px;
+            }
+        </style>
+       
+
+
+    </head>
+    <body>
+ 
+            <h1>Question 12. We have bind a click funtion to parent div but we want stop it from performing when user clicks on its child li</h1>
+     
+
+        <div id="main">
+                <ul>
+                    <li>number 1</li>
+                    <li>number 2</li>
+                    <li>number 3</li>
+                    <li>number 4</li>
+                    <li>number 5</li>
+                </ul>
+
+                <button onclick="unbindFunc()">Unbind click event</button>
+        </div>
+
+
+
+
+
+
+            <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+            <script>
+                $(document).ready(function(){
+                    $("#notworking").click(function(){
+                        event.preventDefault();
+                    });
+                    $("#main li").click(function(){
+                        alert("clicked");
+                    });
+
+                });
+
+                function unbindFunc(){
+                    $("#main li").unbind("click");
+
+                }
+            </script>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!-- Question 11. On clicking on "google" tag. It is taking us to google home page. Stop it from happening.-->
+
+<html>
+    <head>
+
+        <title>Question 11</title>
+        <style>
+            h1{
+                margin-left: 10%;
+                margin-top:15%;
+            }
+            #main{
+                margin-top: 20px;
+                margin-left:45%;
+            }
+            #dymnc{
+                margin-top: 20px;
+                margin-left:44%;
+            }
+            button{
+                margin-left: 30%;
+                margin-top:20px;
+            }
+            a{
+                margin-bottom:
+            }
+        </style>
+       
+
+
+    </head>
+    <body>
+ 
+            <h1>Question 11. On clicking on "google" tag. It is taking us to google home page. Stop it from happening.</h1>
+     
+
+        <div id="main">
+            <a href="http://www.google.com">Working Link to google</a><br><br>
+            <a href="http://www.google.com" id="notworking">Not working Link take to google</a>
+        </div>
+
+
+
+
+
+
+            <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+            <script>
+                $(document).ready(function(){
+                    $("#notworking").click(function(){
+                        event.preventDefault();
+                    });
+
+                });
+            </script>
+    </body>
+</html>

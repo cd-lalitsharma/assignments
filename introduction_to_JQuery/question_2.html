@@ -1,0 +1,55 @@
+<!-- Question 2.Select a ID name "#test" and add class "load" when DOM is loaded-->
+
+<html>
+    <head>
+
+        <title>Question 2</title>
+        <style>
+            #question{
+                margin-left: 20%;
+                margin-top:15%;
+            }
+            #test{
+                margin-top: 20px;
+                margin-left:30%;
+            }
+
+            .load{
+                margin-left: 40%;
+                margin-top:20px;
+                color: blue;
+            }
+        
+        </style>
+       
+
+
+    </head>
+    <body>
+
+        <div id="question">
+            <h1>Question 2. Select a ID name "#test" and add class "load" when DOM is loaded</h1>
+        </div>
+
+        <div id="test">
+            <h3>div with #test id and load class will be add to it after dom load completely</h3>
+        </div>
+
+
+
+
+
+
+            <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+            <script>
+                alert("press ok to load dom and update content.");
+            $(document).ready(function(){
+                $("#test").addClass("load").append("<h3>load classs added<h3>");
+
+            });
+            </script>
+    </body>
+</html>

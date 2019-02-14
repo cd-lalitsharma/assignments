@@ -1,0 +1,85 @@
+<!-- Question 14. Chagne color of every cell which has numberl larger than 10.-->
+
+<html>
+    <head>
+
+        <title>Question 14</title>
+        <style>
+            h1{
+                margin-left: 10%;
+                margin-top:15%;
+            }
+            #main{
+                margin-top: 20px;
+                margin-left:45%;
+            }
+            #heading{
+                margin-top: 20px;
+                margin-left:40%;
+            }
+            #dymnc{
+                margin-top: 20px;
+                margin-left:44%;
+            }
+            button{
+                margin-top:20px;
+            }
+        </style>
+       
+
+
+    </head>
+    <body>
+ 
+            <h1>Question 14. Change color of every cell which has number larger than 10.</h1>
+     
+        <div id="main">
+                <table id="ek">
+                        <tr>
+                        <th>S.No</th>
+                         <th>Number</th>
+                        </tr>
+                         <tr>
+                             <td>1</td>
+                             <td id="r1">10</td>
+                         </tr>
+                         <tr>
+                             <td>2</td>
+                             <td id="r2">4</td>
+                         </tr>
+                         <tr>
+                                <td>3</td>
+                                <td id="r3">40</td>
+                        </tr>
+                        <tr>
+                                <td>4</td>
+                                <td id="r4">20</td>
+                        </tr>
+                </table>
+                <button onclick="chng()">change cell color</button>
+        </div>
+
+
+
+
+
+
+            <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+            <script>
+                function chng(){
+                    var ln = $("#ek tr").length;
+                    for(var i=0;i<ln;i++){
+                        var itm ="#r"+i;
+                        var vl = parseInt($(itm).text());
+                        if( vl>10){
+                            $(itm).css("background-color","green");
+                        }
+                    }
+                }
+ 
+            </script>
+    </body>
+</html>
