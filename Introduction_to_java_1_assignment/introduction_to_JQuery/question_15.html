@@ -1,0 +1,137 @@
+<!-- Question 15. Retrive the data from server using ajax get call.-->
+
+<html>
+    <head>
+
+        <title>Question 15</title>
+        <style>
+            h1{
+                margin-left: 20%;
+                margin-top:12%;
+            }
+            #main{
+                margin-top: 20px;
+                margin-left:40%;
+            }
+            #heading{
+                margin-top: 20px;
+                margin-left:35%;
+            }
+            #dymnc{
+                margin-top: 20px;
+                margin-left:44%;
+            }
+            button{
+                margin-top:20px;
+                margin-left: 8%;
+                height: 45px;
+            }
+            input[type='text']{
+                height:40px ;
+                font-size: 20px;
+            }
+            #data{
+                margin-top: 20px;
+                margin-left: 35%;
+            }
+        </style>
+       
+
+
+    </head>
+    <body>
+ 
+            <h1>Question 15. Retrive the data from server using ajax get call</h1>
+            <div id="heading">
+                <h3>Enter city and country(optional) to get information about it</h3>
+            </div>
+        <div id="main">
+                 <input type="text" name="textbox" id="textbox" placeholder="City,Country"><br>
+                <button id="btn">get data from server</button>
+        </div>
+        <hr>
+        <div id="data">
+            <table id="dataTable" border="2">
+                <thead>
+                        <tr>
+                                <th>S.No</th>
+                                <th>City</th>
+                                <th>Country</th>
+                                <th>Pin Code</th>
+                                <th>Latitude</th>
+                                <th>Longitude</th>                    
+                            </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+<!-- console.log(data['results'][0].components); -->
+
+            <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+            <script>
+                $(document).ready(function(){
+                    var count=1;
+                    var postcode;
+                    $("#btn").click(function(){
+                        if($("#textbox").val()==""){
+                            alert("enter city to get information");
+                        }else{
+                       
+                        $.ajax({
+                            type:"get",
+                            url:"https://api.opencagedata.com/geocode/v1/json?q="+$("#textbox").val()
+                        +"&key=7a2f91415706488099062fe0f6a83f16&language=en&pretty=1",
+                        success:function(data){
+                            $("#dataTable >tbody").html("");
+                            count=1;
+                            if(data['results'].length!==0){
+                               
+                                for(var k=0;k<data['results'].length;k++){
+
+                                if(typeof data['results'][k].components.city!=="undefined"){
+                                    if(typeof data['results'][k].components.postcode!=="undefined"){
+                                        postcode=data['results'][k].components.postcode;
+                                    }else{
+                                        postcode='not available';
+                                    } 
+                                    $("#dataTable >tbody").append(
+                                "<tr>"+
+                                "<td>"+count+"</td>"+
+                                "<td>"+data['results'][k].components.city+"</td>"+
+                                "<td>"+data['results'][k].components.country+"</td>"+
+                                
+                                "<td>"+postcode+"</td>"+
+                                "<td>"+data['results'][k].geometry.lat+"</td>"+ 
+                                "<td>"+data['results'][k].geometry.lng+"</td>"+                                 
+                                "</tr>"
+                                );
+                                count++;
+                                }
+                                
+                            }
+                            }else{
+                                alert("city not found");
+                            }
+                            
+                           
+                        },
+                        error:function(data){
+                            alert("error in request");
+                        }
+                        });
+                    }
+                    });
+                });
+ 
+            </script>
+    </body>
+</html>

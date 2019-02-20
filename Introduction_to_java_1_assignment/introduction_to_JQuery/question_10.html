@@ -1,0 +1,67 @@
+<!-- Question 10.Create a dropdown menu using hover method in jquery-->
+
+<html>
+    <head>
+
+        <title>Question 10</title>
+        <style>
+            h1{
+                margin-left: 15%;
+                margin-top:15%;
+            }
+            #main{
+                margin-top: 20px;
+                margin-left:45%;
+            }
+            #dymnc{
+                margin-top: 20px;
+                margin-left:44%;
+            }
+            button{
+                margin-left: 30%;
+                margin-top:20px;
+            }
+        </style>
+       
+
+
+    </head>
+    <body>
+ 
+            <h1>Question 10.Create a dropdown menu using hover method in jquery</h1>
+     
+
+        <div id="main">
+            <select name="toSelect" id="selectVal">
+                <option value="">select</option>
+                <option value="one">one value</option>
+                <option value="two">two value</option>
+                <option value="three">three value</option>
+                <option value="four">four value</option>
+                <option value="five">five value</option>
+                <option value="six">six value</option>
+            </select>
+        </div>
+
+
+
+
+
+
+            <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+            <script>
+                $(document).ready(function(){
+                    $("#selectVal").on("mouseover",function(){
+                        $(this)[0].size=$(this).find("option").length;
+                    });
+                    $("#selectVal").on("click",function(){
+                        $(this)[0].size=0;
+                    });
+
+                });
+            </script>
+    </body>
+</html>

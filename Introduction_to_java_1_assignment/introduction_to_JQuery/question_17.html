@@ -1,0 +1,89 @@
+<!-- Question 16. Create a image array and in div create a slide show to animate images of delay of 500ms.-->
+
+<html>
+    <head>
+
+        <title>Question 17</title>
+        <style>
+            h1{
+                margin-left: 15%;
+                margin-top:1%;
+            }
+            #main{
+                margin-top: 20px;
+               margin-left: 30%;
+                padding: 20px;
+
+            }
+
+            img{
+                height: 500px;
+                width: 500px;
+            }
+            #heading{
+                margin-top: 20px;
+                margin-left:35%;
+            }
+            #dymnc{
+                margin-top: 20px;
+                margin-left:44%;
+            }
+            button{
+                margin-top:20px;
+                margin-left: 8%;
+                height: 45px;
+            }
+            input[type='text']{
+                height:40px ;
+                font-size: 20px;
+            }
+            #data{
+                margin-top: 20px;
+                margin-left: 35%;
+            }
+        </style>
+       
+
+
+    </head>
+    <body>
+ 
+            <h1>Question 17. Create a image array and in div create a slide show to animate images of delay of 500ms.</h1>
+             
+        <div id="main">
+                                  
+        </div>
+        
+<!-- console.log(data['results'][0].components); -->
+
+            <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+            <script>
+                $(document).ready(function(){
+                    var curImage=0;
+                    var image1=[
+                        "https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        "https://images.pexels.com/photos/210264/pexels-photo-210264.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        "https://images.pexels.com/photos/289445/pexels-photo-289445.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        "https://images.pexels.com/photos/63743/pexels-photo-63743.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                    ];
+
+                    setInterval(crousel,500);
+
+                    function crousel(){
+                        if(curImage==3){
+                            curImage=0;
+                        }else{
+                            curImage+=1;
+                        }
+                        $("#main").html("<img src='"+image1[curImage]+"'/>").show("slow");
+                    }
+                });
+
+                
+ 
+            </script>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!-- Question 4. Disable submit button using jquery attr method-->
+
+<html>
+    <head>
+
+        <title>Question 4</title>
+        <style>
+            #question{
+                margin-left: 20%;
+                margin-top:15%;
+            }
+            .one-two{
+                margin-top: 20px;
+                margin-left:45%;
+            }
+
+            .one-new{
+                margin-top: 20px;
+                margin-left:40%;
+            }
+            button{
+                margin-left: 43%;
+                margin-top:20px;
+            }
+        </style>
+       
+
+
+    </head>
+    <body>
+
+        <div id="question">
+            <h1>Question 4. Disable submit button using jquery attr method</h1>
+        </div>
+
+
+        <form method="get">
+        <div class="one-new">
+                name:<input name="name" > <br>
+           
+        </div>
+        <div class="one-two">
+                <input type="submit" name="submit">
+           
+        </div>
+
+
+
+        </form>
+        
+        <button onclick="changeSbmt()">Disable submit</button>
+
+
+
+
+
+
+            <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+            <script>
+            function changeSbmt(){
+
+            $('input[type="submit"]').attr("disabled","disabled");
+
+            }
+            </script>
+    </body>
+</html>

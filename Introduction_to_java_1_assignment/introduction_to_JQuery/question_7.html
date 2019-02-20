@@ -1,0 +1,62 @@
+<!-- Question 7. Bind a click function to an "click" element and append next "click" next to it.-->
+
+<html>
+    <head>
+
+        <title>Question 7</title>
+        <style>
+            h1{
+                margin-left: 15%;
+                margin-top:15%;
+            }
+            #main{
+                margin-top: 20px;
+                margin-left:20%;
+            }
+            #dymnc{
+                margin-top: 20px;
+                margin-left:45%;
+            }
+            button{
+                margin-left: 30%;
+                margin-top:20px;
+            }
+        </style>
+       
+
+
+    </head>
+    <body>
+ 
+            <h1>Question 7. Bind a click function to an "click" element and append next "click" next to it.</h1>
+     
+
+        <div id="main">
+            <button id="btn" >Click Function</button>
+        </div>
+        <div id="dymnc">
+
+
+        </div>
+
+
+
+
+
+
+            <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+            <script>
+                function clk(){
+                    
+                }
+                $(document).ready(()=>{
+                    $("#btn").click(()=>{
+                        $("#dymnc").html("<p> click added</p>");
+                    });
+                });
+            </script>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!-- Question 13. Get the max height of elements using jquery each method-->
+
+<html>
+    <head>
+
+        <title>Question 13</title>
+        <style>
+            h1{
+                margin-left: 10%;
+                margin-top:15%;
+            }
+            #main{
+                margin-top: 20px;
+                margin-left:45%;
+            }
+            #heading{
+                margin-top: 20px;
+                margin-left:40%;
+            }
+            #dymnc{
+                margin-top: 20px;
+                margin-left:44%;
+            }
+            button{
+                margin-top:20px;
+            }
+        </style>
+       
+
+
+    </head>
+    <body>
+ 
+            <h1>Question 13. Get the max height of elements using jquery each method</h1>
+     
+            <div id="heading">
+                <h3>click on any div to get its height</h3>
+            </div>
+        <div id="main">
+            <h3>div 1</h3>
+                <ul>
+                    <li>number 1</li>
+                    <li>number 2</li>
+                    <li>number 3</li>
+                    <li>number 4</li>
+                    <li>number 5</li>
+                </ul>
+
+        </div>
+        <hr>
+        <div id="div2">
+            <h2>Div 2</h2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus nulla reprehenderit adipisci a sapiente repellat error assumenda impedit dolor, ab dolorem in aliquam velit quibusdam veniam ratione facilis labore natus!
+            Molestias adipisci voluptatem, nostrum perferendis harum quidem est illum fugiat quam necessitatibus quia repellat accusantium, rerum porro similique dolor! Cumque corrupti voluptates architecto quis ipsa inventore molestiae corporis repudiandae. Saepe!
+            Nostrum earum unde quae neque assumenda, culpa ipsa quod omnis consequatur, minus commodi, rerum officiis. Animi hic omnis iusto, repellat iure esse commodi quam impedit quas perspiciatis, pariatur ab placeat.
+            Cumque nostrum corrupti vero nihil, assumenda unde iusto dignissimos voluptatem maxime ut deleniti tempora officia perspiciatis earum explicabo voluptates, recusandae error in maiores modi. Dolorem nihil totam accusamus amet vero.
+            Asperiores cumque, laborum totam, aut doloremque, commodi temporibus alias iusto nobis expedita at ab assumenda maiores incidunt numquam recusandae molestias laboriosam adipisci quasi corrupti! Sit in nostrum consequatur officia impedit.
+            Odio harum, quis odit eligendi maxime libero quia accusantium, laborum sunt eaque perferendis quisquam numquam illum in veritatis optio? Et commodi sapiente fugiat nesciunt atque! Earum iure incidunt numquam repudiandae?
+            Esse, dolor. Nobis odio, amet asperiores maiores corporis vel molestias facilis vero inventore nam aspernatur velit in? Nostrum, doloremque possimus. Enim iure ab delectus atque necessitatibus est voluptates, incidunt ipsum.
+            Aspernatur suscipit magnam beatae repellat. Excepturi incidunt eveniet perferendis rerum natus impedit eligendi, cumque culpa. Ex dolor sapiente, asperiores magnam itaque corporis, numquam fugit unde aliquam atque, dolorum nostrum necessitatibus!
+            Nihil, eum architecto, in quia accusantium eaque dicta id nobis omnis, iusto ratione. Impedit temporibus molestiae aliquam fugit nulla, magni minima, exercitationem tenetur nemo voluptate quos molestias soluta unde corrupti.
+            Amet blanditiis vitae rerum saepe laborum earum reprehenderit sint omnis harum dolorem non tenetur quis velit deleniti dicta officiis pariatur aperiam distinctio architecto nulla, libero ex soluta. Fugit, fuga nulla!
+        </div>
+
+
+
+
+
+
+            <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+            <script>
+                $(document).ready(function(){
+                    $("div").each(function(i){
+                        alert("element " +(i+1) + " has height " +$(this).height() +" px" );
+                    });
+                });
+            </script>
+    </body>
+</html>

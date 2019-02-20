@@ -1,0 +1,163 @@
+<!-- Question 5.create a list of objects of Employee with info as follow :
+
+Name, age, salary ,DOB
+
+1.filter all employees with salary greater than 5000
+
+2.group employee on the basis of their age
+
+3.fetch employees with salary less than 1000 and age greater than 20. Then give them an increment 5 times their salary.-->
+<html>
+        <head>
+            <title>Question 5</title>
+            <style>
+                #heading{
+                    margin-top: 15px;
+                    margin-left: 35%;
+                }
+                #button{
+                    margin-top:10px;
+                    margin-left:43%;
+                }
+                input[type=text]{
+                    height: 30px;
+                }
+                button[type=button]{
+                    height: 30px;
+                }
+                #question{
+                    margin-top: 20px;
+                    align-content: center;
+                    margin-left: 20px;
+                }
+            </style>
+        </head>
+        <body>
+            
+            <div id="question">
+                    <h1>Question 5.create a list of objects of Employee with info as follow :Name, age, salary ,DOB    </h1>                
+                    <ol>
+                        <li>filter all employees with salary greater than 5000</li>
+                        <li>group employee on the basis of their age</li>
+                        <li>fetch employees with salary less than 1000 and age greater than 20. Then give them an increment 5 times their salary.
+                            </li>
+                        </ol>
+            </div>
+            <div id="heading">
+                    <h2>Open console and Click button to see answer</h2>
+            </div>
+            <div id="button">
+                    <button onclick="answer1()" type="button">Answer1</button>  
+                    <button onclick="answer2()" type="button">Answer2</button>   
+                    <button onclick="answer3()" type="button">Answer3</button>         
+            </div>
+                   
+            
+    
+            <script>
+            
+                let emp =[{name:"a",salary:1000,age:20},
+                              {name:"b",salary:1200,age:21},
+                              {name:"c",salary:5200,age:22},
+                              {name:"d",salary:6400,age:23},
+                              {name:"e",salary:1500,age:24},
+                              {name:"v",salary:500,age:25},
+                              {name:"x",salary:600,age:17},
+                              {name:"y",salary:700,age:18},
+                              {name:"z",salary:800,age:19}]
+                function answer1(){
+                    console.clear();
+                    console.log("%c1.filter all employees with salary greater than 5000","color: blue; font-size:15px;");
+                    for(let i=0;i<emp.length;i++){
+                        if(emp[i].salary>5000){
+                            console.log("Name : "+emp[i].name);
+                            console.log("salary : "+emp[i].salary);
+                            console.log("age : "+emp[i].age);
+                        }
+                    }
+                }
+
+                function answer2(){
+                    console.clear();
+                    console.log("%c2.group employee on the basis of their age","color: blue; font-size:15px;");
+                    let newGroup=[];
+                    for(let i=0;i<emp.length;i++){
+                        if(emp[i].age>10 && emp[i].age<20){
+                            let obj={name:emp[i].name,
+                                    salary:emp[i].salary,
+                                    age:emp[i].age,
+                                    group:1}
+                            newGroup.push(obj);
+                        }
+
+                        if(emp[i].age>20 && emp[i].age<30){
+                            let obj={name:emp[i].name,
+                                    salary:emp[i].salary,
+                                    age:emp[i].age,
+                                    group:2}
+                            newGroup.push(obj)
+                        }
+                    }
+                    console.log("%c printing group 1 - age between 10 & 20","color:green;font-size:15px");
+                    for(let i=0;i<newGroup.length;i++){
+                        if(newGroup[i].group==1){
+                            console.log("Name : "+newGroup[i].name);
+                            console.log("salary : "+newGroup[i].salary);
+                            console.log("age : "+newGroup[i].age);
+                        }
+                    }
+                    console.log("%c printing group 2 - age between 20 & 30","color:green;font-size:15px");
+                    for(let i=0;i<newGroup.length;i++){
+                        if(newGroup[i].group==2){
+                            console.log("Name : "+newGroup[i].name);
+                            console.log("salary : "+newGroup[i].salary);
+                            console.log("age : "+newGroup[i].age);
+                        }
+                    }
+
+                }
+
+                function answer3(){ 
+                    console.clear();
+                    let emp =[{name:"a",salary:1000,age:20},
+                              {name:"b",salary:1200,age:21},
+                              {name:"c",salary:5200,age:22},
+                              {name:"d",salary:6400,age:23},
+                              {name:"e",salary:1500,age:24},
+                              {name:"v",salary:500,age:25},
+                              {name:"x",salary:600,age:17},
+                              {name:"y",salary:700,age:18},
+                              {name:"z",salary:800,age:19}]
+
+                    console.log("%c3.fetch employees with salary less than 1000 and age greater than 20. Then give them an increment 5 times their salary.","color: blue; font-size:15px;");
+                    console.log("%cpeople below age 20 having salary less than 1000","color: green; font-size:15px;");
+                    var count=1;
+                    for(let i=0;i<emp.length;i++){
+                        if(emp[i].salary<1000 && emp[i].age<20 ){
+                            console.log("Person "+count);
+                            console.log("Name : "+emp[i].name);
+                            console.log("salary : "+emp[i].salary);
+                            console.log("age : "+emp[i].age);
+                            emp[i].salary*=5;
+                            count+=1;
+                        }
+
+
+                    }
+                    console.log("%cIncremented Salary of people below age 20","color: green; font-size:15px;");
+                    for(let i=0;i<emp.length;i++){
+                        if(emp[i].age<20 ){
+                            console.log("Person "+ count);
+                            console.log("Name : "+emp[i].name);
+                            console.log("salary : "+emp[i].salary);
+                            console.log("age : "+emp[i].age);
+                            count+=1;
+                        }
+
+
+                    }
+                }
+            </script>
+        </body>
+            
+    </html>

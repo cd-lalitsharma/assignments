@@ -1,0 +1,71 @@
+<!-- Question 3.Change the color of element which class name end with "-new"-->
+
+<html>
+    <head>
+
+        <title>Question 3</title>
+        <style>
+            #question{
+                margin-left: 20%;
+                margin-top:15%;
+            }
+            .one-two{
+                margin-top: 20px;
+                margin-left:40%;
+            }
+
+            .one-new{
+                margin-top: 20px;
+                margin-left:40%;
+            }
+
+            .two-new{
+                margin-top: 20px;
+                margin-left:40%;
+            }
+            button{
+                margin-left: 40%;
+                margin-top:20px;
+            }
+        </style>
+       
+
+
+    </head>
+    <body>
+
+        <div id="question">
+            <h1>Question 3. Change the color of element which class name end with "-new"</h1>
+        </div>
+
+        <div class="one-new">
+            <h3>div with #one-new id</h3>
+        </div>
+
+        <div class="one-two">
+                <h3>div with #one-two id</h3>
+            </div>
+        <div class="two-new">
+                <h3>div with #two-new id</h3>
+        </div>
+        
+        <button onclick="changeClr()">Change color</button>
+
+
+
+
+
+
+            <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+            <script>
+            function changeClr(){
+
+            $('[class$="-new"]').css("color","green");
+
+            }
+            </script>
+    </body>
+</html>

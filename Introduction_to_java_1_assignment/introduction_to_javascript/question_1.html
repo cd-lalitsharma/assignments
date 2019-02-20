@@ -1,0 +1,71 @@
+<!-- Question. Prompt for amount, interest rate 
+    and no. of years and calculate simple interest. -->
+<html>
+    <head>
+        <title>Question 1</title>
+        <style>
+            #calc{
+                margin-top: 30px;
+                margin-left: 38%;
+            }
+            #button{
+                margin-top:10px;
+                margin-left:46%;
+            }
+            #question{
+                    margin-top: 20px;
+                    margin-left: 20%;
+                }
+        </style>
+    </head>
+    <body>
+            <div id="question">
+                <h1>Question 1. Prompt for amount, interest rate 
+                        and no. of years and calculate simple interest.</h1>
+                </div>
+        <div id="calc">
+                <h1>Simple Interest Calculator</h1>
+        </div>
+        <div id="button">
+                <button onclick="calc()" type="button">Start Calculating</button>        
+
+        </div>
+               
+        
+
+        <script>
+            function calc(){
+                alert("Kindly fill Principle, Interest and Rate.");
+                var intP=NaN,intT=NaN,intR=NaN;
+                
+                while(isNaN(intP)){
+                    let p = prompt("Enter Principle");
+                    intP=parseInt(p); 
+                    if(isNaN(intP)){
+                        alert("kindly Enter only digits");
+                    }
+                    
+                }
+                while(isNaN(intT)){
+                    let t = prompt("Enter Time");
+                    intT=parseInt(t); 
+                    if(isNaN(intT)){
+                        alert("kindly Enter only digits");
+                    }
+                    
+                }
+                while(isNaN(intR)){
+                    let r = prompt("Enter Rate");
+                    intR=parseInt(r); 
+                    if(isNaN(intR)){
+                        alert("kindly Enter only digits");
+                    }
+                    
+                }
+                let result=(intT*intR*intP)/100;
+                alert("The simple interest is "+ result);
+            }
+        </script>
+    </body>
+        
+</html>
