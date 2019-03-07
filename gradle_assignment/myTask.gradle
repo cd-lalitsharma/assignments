@@ -1,0 +1,3 @@
+task hello<<{
+    print "hello from mytask"
+}
