@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+">
+
+  <context:component-scan base-package="annotation"/>
+    <context:annotation-config/>
+<!--To make use of @Required-->
+ <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+
+    <!--To make use of @Autowired -->
+
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+
+    <bean id="database" class="Database.DataBase">
+        <property name="name" value="oracle"/>
+        <property name="port" value="8081"/>
+    </bean>
+
+    <bean id="tea" class="RestaurantExample.Tea"/>
+    <bean id="expressTea" class="RestaurantExample.ExpressTea"/>
+
+    <bean id="teaRestaurant" class="RestaurantExample.Restaurant">
+        <property name="hotDrink" >
+            <ref bean="tea"/>
+        </property>
+    </bean>
+
+    <bean id="collectionBean" class="CollectionBean.Complex">
+        <property name="list">
+            <list>
+                <value> one</value>
+                <value> two</value>
+            </list>
+
+        </property>
+        <property name="set">
+            <set>
+                <value> one</value>
+                <value> one</value>
+            </set>
+
+        </property>
+        <property name="map">
+            <map>
+                <entry value="value 1" key="key1"/>
+                <entry key="key2" value="value 2"/>
+            </map>
+
+        </property>
+    </bean>
+
+    <!--Autowiring Restaurant with byName, byType and constructor.-->
+    <!--byName-->
+
+    <bean id="restaurantAutoWireByName" class="RestaurantExample.Restaurant" autowire="byName"/>
+    <bean id="hotDrink" class="RestaurantExample.Tea"/>
+
+    <!--byType-->
+
+    <!--<bean id="restaurantAutoWireByType" class="RestaurantExample.Restaurant" autowire="byType"/>-->
+    <!--will work if all other beans of tea and expressTea are commented except the one below because
+    to use byType we need to have only one bean of that type which we are wiring-->
+    <!--<bean id="teaType" class="RestaurantExample.Tea"/>-->
+
+    <!--constructor-->
+
+    <bean id="restaurantAutoWireByConstructor" class="RestaurantExample.Restaurant" autowire="constructor">
+        <property name="hotDrink" ref="expressTea"/>
+    </bean>
+
+    <bean id="expressConstructor" class="RestaurantExample.ExpressTea"/>
+
+
+</beans>
