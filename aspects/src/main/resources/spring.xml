@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <bean id="listenerExample" class="ListenerExample"/>
+    <bean class="ListenerStart"/>
+    <bean id="customEventListener" class="CustomListener.CustomEventListener"/>
+    <bean id="cep" class="CustomListener.CustomEventPublisher"/>
+
+
+    <!--Aop configuration tag-->
+    <aop:aspectj-autoproxy/>
+    <bean id="dummy" class="Aop.Dummy"/>
+    <bean id="adviceClass" class="Aop.AdviceClass"/>
+    <bean id="loggingAspect" class="Logging.LoggingAspect"/>
+    <bean id="throwingAspect" class="afterThrowingDemo.ThrowingAspect"/>
+    <bean id="exceptionGenerator" class="afterThrowingDemo.ExceptionGenerator"/>
+
+</beans>
