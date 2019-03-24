@@ -11,9 +11,8 @@ public class Async {
     
     public static void main(String[] args) throws InterruptedException {
         ConfigurableApplicationContext configurableApplicationContext = new AnnotationConfigApplicationContext("AsyncListener");
-        ExecutingClass executingClass=configurableApplicationContext.getBean("dummy",ExecutingClass.class);
+        ExecutingClass executingClass=configurableApplicationContext.getBean(ExecutingClass.class);
         executingClass.display();
-        
         
     }
 

@@ -8,7 +8,7 @@ import org.aspectj.lang.annotation.Aspect;
 public class ThrowingAspect {
 
 
-    @AfterThrowing(pointcut = "execution(* afterThrowingDemo.*(..))", throwing = "ex")
+    @AfterThrowing(pointcut = "execution(* afterThrowingDemo.ExceptionGenerator.*(..))", throwing = "ex")
     void afterThrowing(Exception ex) throws Exception{
         System.out.println("exception occured "+ex);
     }

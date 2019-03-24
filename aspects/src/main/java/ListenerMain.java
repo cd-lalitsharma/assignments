@@ -9,13 +9,13 @@ public class ListenerMain {
         ListenerExample listenerExample= configurableApplicationContext.getBean("listenerExample",ListenerExample.class);
         
         CustomEventPublisher cp = configurableApplicationContext.getBean("cep",CustomEventPublisher.class);
-//        cp.publish();
+        cp.publish();
         configurableApplicationContext.start();
         listenerExample.display();
     
      
       
-        configurableApplicationContext.stop();
+//        configurableApplicationContext.stop();
         
     }
 }
