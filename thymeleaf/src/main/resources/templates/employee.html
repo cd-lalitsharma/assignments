@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee status</title>
+</head>
+<body>
+<h1>Create a dynamic HTML page and render an Employee table with emp object return from the controller</h1>
+<h4> employee details table </h4>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Department</th>
+    </tr>
+    <tr th:object="${employee}">
+        <td th:text="${employee.id}"></td>
+        <td th:text="${employee.name}"></td>
+        <td th:text="${employee.age}"></td>
+        <td th:text="${employee.department}"></td>
+    </tr>
+
+</table>
+
+<a th:href="@{'/isAdmin'}">goto question 5</a>
+</body>
+</html>

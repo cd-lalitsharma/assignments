@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://wwww.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{'/isAdminHandler'}" th:object="${employee}" method="post">
+    name:<input th:field="*{name}" type="text" /><br/>
+    Admin<input th:field="*{admin}" type="checkbox"/><br/>
+    <input type="submit" value="sumbit">
+</form>
+</body>
+</html>

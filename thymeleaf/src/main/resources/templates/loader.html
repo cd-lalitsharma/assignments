@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/mvc">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Loader Example</title>
+
+</head>
+<body>
+<h1>Add loader in registration form submission which renders load till server return success form submission response.</h1>
+<form id="fullname" action="#" method="post">
+    Firstname<input name="firstName" type="text">
+    Lastname<input name="lastName" type="text">
+    <input type="submit" value="Get Full Name">
+</form>
+<br/>
+<div th:include="header::loader"></div>
+<div id="fullnamediv">
+    <p></p>
+</div>
+
+
+<script th:src="@{'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'}"></script>
+<script th:src="@{'/js/loader.js'}"></script>
+
+</body>
+</html>

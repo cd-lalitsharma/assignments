@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax time</title>
+</head>
+<body>
+<h1>Make a web page to show server time using ajax call.</h1>
+<h3>current time is <span id="displayTime"></span> </h3>
+
+<br/>
+
+<a th:href="@{'/conditionalTag'}">goto question 8</a>
+</body>
+<script th:src="@{'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'}"></script>
+<script type="application/javascript">
+
+    $(document).ready(function(){
+        ajx();
+        setInterval(ajx,1000);
+       function ajx(){
+           $.ajax({
+               url:'/getTime',
+               method:'GET',
+               success:function(data){
+                   $("#displayTime").html(data);
+               }
+           });
+       }
+
+
+    });
+
+</script>
+</html>

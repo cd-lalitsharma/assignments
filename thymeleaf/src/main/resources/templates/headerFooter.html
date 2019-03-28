@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div th:include="header::header"></div>
+<h1> Q. Create and split common header and footer in the above-created listing page.</h1>
+<h1 th:text="${message}"> message</h1>
+
+<div th:include="footer::footer"></div>
+
+<a th:href="@{'/ajaxTime'}">goto question 7</a>
+</body>
+</html>

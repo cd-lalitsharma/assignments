@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Conditional Tag</title>
+
+    <style type="text/css">
+        .odd{
+            background-color: green;
+
+        }
+        .even{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+<h1>Create a user listing table show alternate row color using a conditional tag.</h1>
+<form action="#" th:action="@{/condition}" method="post">
+
+    name:<input type="text" name="name">
+    <input type="submit" value="add name"/>
+
+</form>
+<table id="tbl">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+    </tr>
+    <tr th:each="name,i:${name}" th:classappend="${i.odd}?'odd':'even'">
+        <td th:text="${i.count}">id</td>
+        <td th:text="${name}">name</td>
+    </tr>
+</table>
+
+<a th:href="@{'/enm'}">goto question 9</a>
+
+
+
+
+<script th:src="@{'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'}"></script>
+<script type="application/javascript">
+$(document).ready(function(){
+    var i=0;
+    $("#rowadd").click(function(){
+        console.log(i);
+        $("table#tbl").append("<tr th:>"+ +"</tr>");
+        i+=1;
+    });
+});
+
+</script>
+
+</body>
+</html>

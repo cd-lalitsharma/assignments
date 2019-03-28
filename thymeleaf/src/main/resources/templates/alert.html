@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:inline="text">[[${title}]]</title>
+    <link th:href="${'/css/app.css'}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<h1 th:text="${'heading'}" >heading </h1>
+<button onclick="showAlert()" name="btn">press button</button>
+<br/>
+<a th:href="@{'/hello'}">goto  question 2 </a>
+<script th:src="@{'/js/app.js'}"></script>
+
+</body>
+</html>

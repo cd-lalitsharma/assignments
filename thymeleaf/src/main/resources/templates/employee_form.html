@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee form</title>
+</head>
+<body>
+<h1>Create an Employee registration form and bind it's requested values on the controller.</h1>
+<form action="#" th:action="@{'/empHandler'}" th:object="${employee}" method="post">
+
+    Name:<input th:field="*{name}" type="text"/><br/>
+    Id:<input th:field="${employee.id}" type="text"/><br/>
+    Age:<input th:field="${employee.age}" type="text"/><br/>
+    Department:<input th:field="${employee.department}" type="text"/><br/>
+    <input type="submit" name="submit" value="submit form"/>
+</form>
+
+</body>
+</html>
